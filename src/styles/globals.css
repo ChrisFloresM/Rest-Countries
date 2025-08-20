@@ -1,0 +1,206 @@
+/* =================================
+   COLORS
+================================= */
+:root {
+    /* ============== Colors ============== */
+    /* Primary Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Grey Scale */
+    --grey-950: #111517;
+    --grey-400: #808080;
+    --grey-350: #979797;
+    --grey-300: #B2B2B2;
+    --grey-250: #C4C4C4;
+    --grey-50: #FCFCFC;
+
+    /* Blue Scale */
+    --blue-950: #202C36;
+    --blue-900: #2B3844;
+
+    /* ============== Spacing system ============== */
+    --spacing-100: 0.8rem;  /* 8px */
+    --spacing-200: 1.6rem;  /* 16px */
+    --spacing-300: 2.4rem;  /* 24px */
+    --spacing-400: 3.2rem;  /* 32px */
+    --spacing-500: 4.0rem;  /* 40px */
+    --spacing-600: 4.8rem;  /* 48px */
+    --spacing-700: 5.6rem;  /* 56px */
+    --spacing-800: 6.4rem;  /* 64px */
+    --spacing-900: 7.2rem;  /* 72px */
+    --spacing-1000: 8.0rem; /* 80px */
+
+    /* ============== Typography system ============== */
+    --font-family-base: 'Nunito Sans', sans-serif;
+
+    /* Text Preset 1 - ExtraBold */
+    --text-1-font-size: 3.2rem;     /* 32px */
+    --text-1-line-height: 137.5%;
+    --text-1-letter-spacing: 0rem;  /* 0px */
+    --text-1-font-weight: 800;      /* ExtraBold */
+
+    /* Text Preset 2 - ExtraBold */
+    --text-2-font-size: 2.4rem;     /* 24px */
+    --text-2-line-height: 137.5%;
+    --text-2-letter-spacing: 0rem;  /* 0px */
+    --text-2-font-weight: 800;      /* ExtraBold */
+
+    /* Text Preset 3 - ExtraBold */
+    --text-3-font-size: 1.8rem;     /* 18px */
+    --text-3-line-height: 145%;
+    --text-3-letter-spacing: 0rem;  /* 0px */
+    --text-3-font-weight: 800;      /* ExtraBold */
+
+    /* Text Preset 4 - SemiBold */
+    --text-4-font-size: 1.6rem;     /* 16px */
+    --text-4-line-height: 200%;
+    --text-4-letter-spacing: 0rem;  /* 0px */
+    --text-4-font-weight: 600;      /* SemiBold */
+    --text-4-font-weight-light: 300; /* Light */
+
+    /* Text Preset 5 (Regular) - Nunito Sans Regular */
+    --text-5-font-size: 1.4rem;     /* 14px */
+    --text-5-line-height: 145%;
+    --text-5-letter-spacing: 0rem;  /* 0px */
+    --text-5-font-weight: 400;      /* Regular */
+
+    /* Text Preset 5 (Light) - Nunito Sans Light */
+    --text-5-light-font-size: 1.4rem;     /* 14px */
+    --text-5-light-line-height: 225%;
+    --text-5-light-letter-spacing: 0rem;  /* 0px */
+    --text-5-light-font-weight: 300;      /* Light */
+
+    /* Text Preset 6 (SemiBold) - Nunito Sans SemiBold */
+    --text-6-font-size: 1.2rem;     /* 12px */
+    --text-6-line-height: 155%;
+    --text-6-letter-spacing: 0rem;  /* 0px */
+    --text-6-font-weight: 600;      /* SemiBold */
+
+    /* Text Preset 6 (Regular) - Nunito Sans Regular */
+    --text-6-regular-font-size: 1.2rem;     /* 12px */
+    --text-6-regular-line-height: 155%;
+    --text-6-regular-letter-spacing: 0rem;  /* 0px */
+    --text-6-regular-font-weight: 400;      /* Regular */
+
+    /* Text Preset 6 (Light) - Nunito Sans Light */
+    --text-6-light-font-size: 1.2rem;     /* 12px */
+    --text-6-light-line-height: 155%;
+    --text-6-light-letter-spacing: 0rem;  /* 0px */
+    --text-6-light-font-weight: 300;      /* Light */
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 800;
+
+    --border-radius: 0.5rem;
+}
+
+/*==================== Theming ====================*/
+[data-theme='light'] {
+    --primary-font-color: var(--grey-950);
+    --background-color: var(--color-white);
+    --background-color-secondary: var(--color-white);
+    --search-color-icon: var(--grey-300);
+    --search-color-text: var(--grey-250);
+    --box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.0532);
+}
+
+[data-theme='dark'] {
+    --primary-font-color: var(--color-white);
+    --background-color: var(--blue-950);
+    --background-color-secondary: var(--blue-900);
+    --search-color-icon: var(--color-white);
+    --search-color-text: var(--color-white);
+    --box-shadow: none;
+}
+
+/* ============== Text Preset Selectors ============== */
+.text-1 {
+    font-size: var(--text-1-font-size);
+    line-height: var(--text-1-line-height);
+    letter-spacing: var(--text-1-letter-spacing);
+    font-weight: var(--text-1-font-weight);
+}
+
+.text-2 {
+    font-size: var(--text-2-font-size);
+    line-height: var(--text-2-line-height);
+    letter-spacing: var(--text-2-letter-spacing);
+    font-weight: var(--text-2-font-weight);
+}
+
+.text-3 {
+    font-size: var(--text-3-font-size);
+    line-height: var(--text-3-line-height);
+    letter-spacing: var(--text-3-letter-spacing);
+    font-weight: var(--text-3-font-weight);
+}
+
+.text-4 {
+    font-size: var(--text-4-font-size);
+    line-height: var(--text-4-line-height);
+    letter-spacing: var(--text-4-letter-spacing);
+    font-weight: var(--text-4-font-weight);
+}
+
+.text-4-light {
+    font-size: var(--text-4-font-size);
+    line-height: var(--text-4-line-height);
+    letter-spacing: var(--text-4-letter-spacing);
+    font-weight: var(--text-4-font-weight-light);
+}
+
+.text-5 {
+    font-size: var(--text-5-font-size);
+    line-height: var(--text-5-line-height);
+    letter-spacing: var(--text-5-letter-spacing);
+    font-weight: var(--text-5-font-weight);
+}
+
+.text-5-light {
+    font-size: var(--text-5-light-font-size);
+    line-height: var(--text-5-light-line-height);
+    letter-spacing: var(--text-5-light-letter-spacing);
+    font-weight: var(--text-5-light-font-weight);
+}
+
+.text-6 {
+    font-size: var(--text-6-font-size);
+    line-height: var(--text-6-line-height);
+    letter-spacing: var(--text-6-letter-spacing);
+    font-weight: var(--text-6-font-weight);
+}
+
+.text-6-regular {
+    font-size: var(--text-6-regular-font-size);
+    line-height: var(--text-6-regular-line-height);
+    letter-spacing: var(--text-6-regular-letter-spacing);
+    font-weight: var(--text-6-regular-font-weight);
+}
+
+.text-6-light {
+    font-size: var(--text-6-light-font-size);
+    line-height: var(--text-6-light-line-height);
+    letter-spacing: var(--text-6-light-letter-spacing);
+    font-weight: var(--text-6-light-font-weight);
+}
+
+/* ==================== other global styles ==================== */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-family: var(--font-family-base), sans-serif;
+    color: var(--primary-font-color);
+    background-color: var(--background-color);
+}
+
+.app-container {
+    width: clamp(37.5rem, 100%, 99rem);
+    margin: 0 auto;
+}
+
