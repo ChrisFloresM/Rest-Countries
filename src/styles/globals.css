@@ -193,7 +193,9 @@ html {
 }
 
 body {
+    position: relative;
     width: 100%;
+    min-height: 100vh;
     font-family: var(--font-family-base), sans-serif;
     color: var(--primary-font-color);
     background-color: var(--background-color);
