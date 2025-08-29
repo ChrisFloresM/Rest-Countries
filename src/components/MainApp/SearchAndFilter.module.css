@@ -1,0 +1,11 @@
+.mainApp__searchAndFilter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-600);
+
+    @media (min-width: 34rem) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}

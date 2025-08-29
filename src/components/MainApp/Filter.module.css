@@ -1,0 +1,35 @@
+.mainApp__filter-container {
+    width: 50%;
+    max-width: 20rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        font-size: 2rem;
+        content: "🔻";
+        right: var(--spacing-100);
+        transform: translateY(-50%);
+        top: 50%;
+        pointer-events: none;
+    }
+}
+
+.mainApp__filter {
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-200) var(--spacing-200);
+    appearance: none;
+    color: var(--primary-font-color);
+    background-color: var(--background-color-secondary);
+    overflow-wrap: break-word;
+
+    @media (min-width: 34rem) {
+        font-size: var(--text-5-font-size);
+    }
+
+    &:hover {
+            cursor: pointer;
+    }
+}

@@ -1,0 +1,27 @@
+.app-header {
+    width: 100%;
+    background-color: var(--background-color-secondary);
+}
+
+.app-header__title-container {
+    padding: var(--spacing-400) var(--spacing-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgb(0, 0, 0, 0.056);
+
+    @media (min-width: 34rem) {
+        padding: var(--spacing-400) var(--spacing-600);
+    }
+
+    @media (min-width: 69rem) {
+        padding: var(--spacing-400) var(--spacing-1000);
+    }
+}
+
+.app-header__title {
+    font-size: 1.4rem;
+    @media (min-width: 69rem){
+        font-size: 2.4rem;
+    }
+}

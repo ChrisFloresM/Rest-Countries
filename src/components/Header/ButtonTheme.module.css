@@ -1,0 +1,13 @@
+.theme-change-button {
+    background: none;
+    border: none;
+    color: var(--primary-font-color);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (min-width: 69rem) {
+        font-size: var(--text-4-font-size);
+    }
+}

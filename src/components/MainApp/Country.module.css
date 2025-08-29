@@ -1,0 +1,23 @@
+.countryList__country {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-secondary);
+    overflow: hidden;
+}
+
+.countryList__flag {
+    width: 100%;
+    height: 50%;
+}
+
+.countryList__country-info {
+    padding: var(--spacing-300) var(--spacing-300) var(--spacing-600) var(--spacing-300);
+}
+
+.countryList__country-name {
+    margin-bottom: var(--spacing-200);
+}
+
+.countryList__country-data {
+    font-weight: var(--font-weight-semi-bold);
+}
