@@ -27,7 +27,7 @@ export default function MainApp() {
 			{ !isLoading && !error &&
 				( countriesData?.length > 0 ?
 					<CountryList currentData={countriesData}/> :
-					<UserFeedback message="Search for a country or select a region to display countries" /> )
+					<UserFeedback message="Hello branch" /> )
 			}
 		</main>
 	)
