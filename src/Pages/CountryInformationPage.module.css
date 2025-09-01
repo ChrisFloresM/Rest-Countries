@@ -1,0 +1,7 @@
+.mainApp__country-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--spacing-500);
+    align-items: flex-start;
+    border-radius: 2px;
+}

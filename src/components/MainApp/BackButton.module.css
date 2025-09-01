@@ -1,0 +1,12 @@
+.back-btn {
+    padding: var(--spacing-100) var(--spacing-300);
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1); /* TODO: Convert to variable */
+    border: none;
+    border-radius: 2px;
+    background-color: var(--background-color-secondary);
+    color: var(--primary-font-color);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
