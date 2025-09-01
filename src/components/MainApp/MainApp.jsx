@@ -33,6 +33,13 @@ export default function MainApp() {
 	)
 }
 
+/* 2 diferent page views to show based on routing:
+* 	1. CountriesList view
+* 	2. CountryInformation view
+* */
+
+
+
 
 
 

@@ -14,6 +14,7 @@ export default function useCountries(searchTerm, selectedRegion) {
     if (!selectedRegion && searchTerm.length < 3) {
       setRawData([]);
       setError(null);
+			previousRegion.current = "";
       return;
     }
 
