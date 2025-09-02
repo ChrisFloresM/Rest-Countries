@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedReference
+
 import styles from './Country.module.css'
 import {Link} from "react-router-dom";
 

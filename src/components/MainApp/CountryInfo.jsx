@@ -1,6 +1,7 @@
 // noinspection JSUnresolvedReference
 
 import styles from './CountryInfo.module.css'
+import CountryBorders from "./CountryBorders.jsx";
 
 function CountryInfo({ countryData }) {
 	const {
@@ -15,6 +16,7 @@ function CountryInfo({ countryData }) {
 		currencies,
 		topLevelDomain,
 		languages,
+		borders
 	} = countryData;
 
  return (
@@ -30,13 +32,13 @@ function CountryInfo({ countryData }) {
 					 <p><span>Sub Region:</span> {subRegion}</p>
 					 <p><span>Capital:</span> {capital}</p>
 				 </div>
-				 <div className={`${styles.mainAppCountryDataBox}`}>
+				 <div className={styles.mainAppCountryDataBox}>
 					 <p><span>Top Level Domain:</span> {topLevelDomain}</p>
 					 <p><span>Currencies:</span> {currencies.join(", ")}</p>
 					 <p><span>Languages:</span> {languages.join(", ")}</p>
 				 </div>
-				 <div>
-					 <p><span>Boundries:</span>{topLevelDomain}</p>
+				 <div className={styles.mainAppBordersContainer}>
+					 <CountryBorders borders={borders}/>
 				 </div>
 			 </div>
 		 </div>
@@ -45,3 +47,4 @@ function CountryInfo({ countryData }) {
 }
 
 export default CountryInfo;
+

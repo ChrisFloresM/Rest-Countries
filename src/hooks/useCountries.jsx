@@ -90,7 +90,7 @@ export default function useCountries(searchTerm, selectedRegion, isCca2=false) {
     return () => {
       controller.abort();
     };
-  }, [selectedRegion, searchTerm]);
+  }, [selectedRegion, searchTerm, isCca2]);
 
   const filteredData = useMemo(() => {
 		if (!selectedRegion || searchTerm.length < 3) {
@@ -165,6 +165,7 @@ function processData(data) {
 			topLevelDomain: country.tld?.[0] ?? "N/A",
 			languages: Object.values(country.languages) ?? "Unknown",
 			cca2: country.cca2 ?? "MX",
+			borders: country.borders ?? [],
 		}
 	});
 }
