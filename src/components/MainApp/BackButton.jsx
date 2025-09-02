@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function BackButton() {
  return (
 	 <Link to={'/'}>
-		 <button className={`text-5 ${styles.backBtn}`}>&larr; back</button>
+		 <button className={`text-5 ${styles.backBtn}`}>&larr; Back</button>
 	 </Link>
  );
 }

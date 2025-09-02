@@ -1,3 +1,5 @@
+// noinspection JSCheckFunctionSignatures
+
 import {useEffect, useMemo, useRef, useReducer} from "react";
 
 const countriesCache = new Map();
@@ -30,26 +32,25 @@ function reducer(state, action) {
 	}
 }
 
-export default function useCountries(searchTerm, selectedRegion) {
+export default function useCountries(searchTerm, selectedRegion, isCca2=false) {
 	const [{ rawData, isLoading, error }, dispatch] = useReducer(reducer, initialState);
 	const previousRegion = useRef("");
 
   useEffect(() => {
-    if (!selectedRegion && searchTerm.length < 3) {
+    if (!isCca2 && !selectedRegion && searchTerm.length < 3) {
 			dispatch({ type: 'RESET' });
 			previousRegion.current = "";
       return;
     }
 
-		if (previousRegion.current === selectedRegion && searchTerm.length < 3) {
+		if (!isCca2 && previousRegion.current === selectedRegion && searchTerm.length < 3) {
 			return;
 		}
 
-		const cacheData = checkFromCache(searchTerm, selectedRegion);
+		const cacheData = checkFromCache(searchTerm, selectedRegion, isCca2);
 		if (cacheData) {
 			dispatch({type: 'FETCH_SUCCESS', payload: cacheData});
 			previousRegion.current = selectedRegion;
-			console.log("obtained from cache!");
 			return;
 		}
 
@@ -62,7 +63,7 @@ export default function useCountries(searchTerm, selectedRegion) {
 
         let url = selectedRegion ?
 					`https://restcountries.com/v3.1/region/${selectedRegion}` :
-					`https://restcountries.com/v3.1/name/${searchTerm}`;
+					`https://restcountries.com/v3.1/${isCca2 ? "alpha" : "name"}/${searchTerm}`;
 
         const res = await fetch(url, { signal });
 
@@ -111,7 +112,7 @@ export default function useCountries(searchTerm, selectedRegion) {
   return [filteredData, error, isLoading];
 }
 
-function checkFromCache(searchTerm, selectedRegion) {
+function checkFromCache(searchTerm, selectedRegion, isCca2) {
 	if (selectedRegion) {
 		const isRegionComplete = completedRegions.get(selectedRegion);
 
@@ -126,9 +127,12 @@ function checkFromCache(searchTerm, selectedRegion) {
 		return null;
 	} else {
 		const cachedCountries = Array.from(countriesCache.values());
-		const matches = cachedCountries.filter(country => country.name.toLowerCase().includes(searchTerm.toLowerCase()));
+		const matches =
+			isCca2 ?
+				cachedCountries.filter(country => country.cca2 === searchTerm) :
+				cachedCountries.filter(country => country.name.toLowerCase().includes(searchTerm.toLowerCase())) ;
 
-		if (matches.length > 0 && searchTerm.length >= 3) {
+		if (matches.length > 0 && (isCca2 || searchTerm.length >= 3)) {
 			return matches;
 		}
 
@@ -146,19 +150,30 @@ function saveToCache(countriesData, selectedRegion) {
 	}
 }
 
-function useCountryDetails() {
-
-}
-
 function processData(data) {
 	return data.map(country => {
 		return {
+			nativeName: getNativeName(country.name?.nativeName),
 			name: country.name?.common ?? "Unknown",
 			population: country.population ?? 0,
 			region: country.region ?? "N/A",
+			subregion: country.subregion ?? "N/A",
 			capital: country.capital?.[0] ?? "N/A",
 			flag: country.flags?.png ?? "https://cdn-icons-png.flaticon.com/512/13434/13434972.png",
 			alt: country.flags?.alt ?? "No description avaiable",
+			currencies: Object.values(country.currencies)?.map(currency => currency.name) || "N/A",
+			topLevelDomain: country.tld?.[0] ?? "N/A",
+			languages: Object.values(country.languages) ?? "Unknown",
+			cca2: country.cca2 ?? "MX",
 		}
 	});
+}
+
+function getNativeName(nativeNames) {
+	if (!nativeNames) return "Unknown";
+
+	const values = Object.values(nativeNames);
+	const lastValue = values[values.length - 1];
+
+	return lastValue?.common || "unknown";
 }
