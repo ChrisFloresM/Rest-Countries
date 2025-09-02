@@ -37,7 +37,7 @@ export default function MainApp() {
 							countriesData={countriesData}
 						/>
 					}/>
-					<Route path="/country" element={<CountryInformationPage />} />
+					<Route path="/country/:name" element={<CountryInformationPage />} />
 				</Routes>
 			</BrowserRouter>
 
