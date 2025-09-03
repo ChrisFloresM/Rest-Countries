@@ -1,0 +1,17 @@
+.mainApp__borders-tag {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-bold);
+
+    @media (min-width: 34rem) {
+        font-size: 1.6rem;
+    }
+}
+
+.mainApp__borders-list {
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 1rem;
+}

@@ -201,6 +201,10 @@ body {
     background-color: var(--background-color);
 }
 
+a, button, input, select {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .app-container {
     width: clamp(37.5rem, 100%, 99rem);
     margin: 0 auto;

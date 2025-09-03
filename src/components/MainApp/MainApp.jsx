@@ -4,6 +4,9 @@ import {useState} from "react";
 import useCountries from "../../hooks/useCountries.jsx";
 import UserFeedback from "./UserFeedback.jsx";
 import styles from './MainApp.module.css'
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import CountriesListPage from "../../Pages/CountriesListPage.jsx";
+import CountryInformationPage from "../../Pages/CountryInformationPage.jsx";
 
 export default function MainApp() {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -21,22 +24,28 @@ export default function MainApp() {
 
 	return (
 		<main className={styles.mainApp}>
-			<SearchAndFilter searchVal={searchTerm} region={selectedRegion} onChangeSearch={handleSearch} onChangeRegion={handleSelectRegion}/>
-			{ !error && isLoading && <UserFeedback message="Searching for countries..."/>}
-			{ !isLoading && error && <UserFeedback message={error}/> }
-			{ !isLoading && !error &&
-				( countriesData?.length > 0 ?
-					<CountryList currentData={countriesData}/> :
-					<UserFeedback message="Search for a country or select a region to display countries" /> )
-			}
+			<BrowserRouter>
+				<Routes>
+					<Route index element={
+						<CountriesListPage
+							searchTerm={searchTerm}
+							selectedRegion={selectedRegion}
+							handleSearch={handleSearch}
+							handleSelectRegion={handleSelectRegion}
+							error={error}
+							isLoading={isLoading}
+							countriesData={countriesData}
+						/>
+					}/>
+					<Route path="/country/:cca2" element={<CountryInformationPage />} />
+				</Routes>
+			</BrowserRouter>
+
 		</main>
 	)
 }
 
-/* 2 diferent page views to show based on routing:
-* 	1. CountriesList view
-* 	2. CountryInformation view
-* */
+
 
 
 
