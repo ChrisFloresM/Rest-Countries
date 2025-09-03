@@ -99,7 +99,7 @@ export default function useCountries(searchTerm, selectedRegion, isCca2=false) {
 
     return rawData.filter(country =>
       country.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  }, [rawData, selectedRegion, searchTerm]);
+  }, [rawData, selectedRegion, searchTerm, dispatch]);
 
 	useEffect(function() {
 			if (searchTerm.length >= 3 && selectedRegion && filteredData.length === 0) {

@@ -4,15 +4,17 @@ import BorderElement from "./BorderElement.jsx";
 
 function CountryBorders({ borders }) {
 
-	const bordersData = useBorders(borders);
+	const [bordersData, isLoading, error] = useBorders(borders);
 
  return (
 	 <>
 		 <p className={styles.mainAppBordersTag}>Border countries:</p>
 		 <ul className={styles.mainAppBordersList}>
-			 { bordersData.map(borderData =>
+			 { !isLoading && error && <li>{error}</li> }
+			 { isLoading && !error && <li>{"Loading borders data..."}</li> }
+			 { !isLoading && !error && bordersData.map(borderData =>
 			 	<BorderElement borderData={borderData} key={borderData.cca2}/>
-			 )}
+			 ) }
 		 </ul>
 	 </>
  );
