@@ -1,5 +1,4 @@
 /* Third party libraries  */
-import {useState} from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 
 /* Module styles */
@@ -17,7 +16,7 @@ export default function MainApp() {
 				<BrowserRouter>
 					<Routes>
 						<Route index element={<CountriesListPage/>}/>
-						<Route path="/country/:cca2" element={<CountryInformationPage/>}/>
+						<Route path="/country/:cca3" element={<CountryInformationPage/>}/>
 					</Routes>
 				</BrowserRouter>
 			</main>

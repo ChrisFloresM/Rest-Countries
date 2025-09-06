@@ -13,7 +13,7 @@ function CountryBorders({ borders }) {
 			 { !isLoading && error && <li>{error}</li> }
 			 { isLoading && !error && <li>{"Loading borders data..."}</li> }
 			 { !isLoading && !error && bordersData.map(borderData =>
-			 	<BorderElement borderData={borderData} key={borderData.cca2}/>
+			 	<BorderElement borderData={borderData} key={borderData.cca3}/>
 			 ) }
 		 </ul>
 	 </>

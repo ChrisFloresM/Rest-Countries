@@ -4,11 +4,11 @@ import styles from './Country.module.css'
 import {Link} from "react-router-dom";
 
 export default function Country({ countryData }) {
-	const {name, population, region, capital, flag, alt, cca2} = countryData;
+	const {name, population, region, capital, flag, alt, cca3} = countryData;
 
 	return (
 		<li className={styles.countryListCountry}>
-			<Link to={`/country/${cca2}`}>
+			<Link to={`/country/${cca3}`}>
 				<img className={styles.countryListFlag} src={flag} alt={alt}/>
 				<div className={styles.countryListCountryInfo}>
 					<h2 className={`text-3 ${styles.countryListCountryName}`}>{name}</h2>

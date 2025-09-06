@@ -10,8 +10,8 @@ import CountryList from "../components/MainApp/CountryListPage/CountryList.jsx";
 import CountryInfo from "../components/MainApp/CountryInformationPage/CountryInfo.jsx";
 
 export default function CountryInformationPage() {
-	const { cca2 } = useParams();
-	const [countryData, error, isLoading] = useCountries(cca2, null, true);
+	const { cca3 } = useParams();
+	const [countryData, error, isLoading] = useCountries(cca3, null, true);
 
 	return (
 		<section className={styles.mainAppCountryInfo}>
