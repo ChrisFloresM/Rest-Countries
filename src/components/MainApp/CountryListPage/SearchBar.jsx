@@ -2,8 +2,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 import styles from './SearchBar.module.css'
+import {useSearchAndRegion} from "../../../context/SearchAndRegionContext.jsx";
 
-export default function SearchBar({ searchVal, onChange }) {
+export default function SearchBar() {
+	const { searchTerm: searchVal, handleSearch: onChange } = useSearchAndRegion();
+
 	return (
 		<div className={styles.mainAppSearchContainer}>
 			<FontAwesomeIcon icon={faMagnifyingGlass} className={styles.mainAppSearchIcon}/>

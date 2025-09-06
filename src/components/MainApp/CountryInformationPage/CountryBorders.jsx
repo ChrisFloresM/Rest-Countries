@@ -1,5 +1,5 @@
 import styles from './CountryBorders.module.css'
-import useBorders from "../../hooks/useBorders.jsx";
+import useBorders from "../../../hooks/useBorders.jsx";
 import BorderElement from "./BorderElement.jsx";
 
 function CountryBorders({ borders }) {

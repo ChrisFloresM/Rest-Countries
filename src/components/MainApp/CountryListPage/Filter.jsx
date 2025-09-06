@@ -1,6 +1,9 @@
 import styles from './Filter.module.css'
+import {useSearchAndRegion} from "../../../context/SearchAndRegionContext.jsx";
 
-export default function Filter({ region, onChange }) {
+export default function Filter() {
+	const {selectedRegion: region, handleSelectRegion: onChange} = useSearchAndRegion();
+
 	return (
 		<div className={styles.mainAppFilterContainer}>
 			<select className={`text-6 ${styles.mainAppFilter}`} value={region} onChange={onChange}>
