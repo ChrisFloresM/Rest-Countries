@@ -15,3 +15,8 @@
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     gap: 1rem;
 }
+
+.mainApp__borders-info {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+}

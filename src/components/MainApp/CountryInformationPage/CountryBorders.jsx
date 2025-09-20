@@ -10,8 +10,9 @@ function CountryBorders({ borders }) {
 	 <>
 		 <p className={styles.mainAppBordersTag}>Border countries:</p>
 		 <ul className={styles.mainAppBordersList}>
-			 { !isLoading && error && <li>{error}</li> }
-			 { isLoading && !error && <li>{"Loading borders data..."}</li> }
+			 { !isLoading && error && <li className={styles.mainAppBordersInfo}>{error}</li> }
+			 { isLoading && !error && <li className={styles.mainAppBordersInfo}>{"Loading borders" +
+				 " data..."}</li> }
 			 { !isLoading && !error && bordersData.map(borderData =>
 			 	<BorderElement borderData={borderData} key={borderData.cca3}/>
 			 ) }
