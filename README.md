@@ -31,13 +31,11 @@ The main purpose of this projects is to practice some advance topics of react:
 3. Click on a country to display detailed information of the country
 4. Click on the "back" button to go to the previous page, or click on a border country to navigate to the selected border country page.
 
-
 ## **Desktop preview:**
-![demo-desktop](https://github.com/user-attachments/assets/8f569f83-d891-4de1-ae5c-8a6feba3f0f0)
-
+![demo-desktop](https://github.com/user-attachments/assets/6a40b2d8-6c5a-4f9f-8ab3-db61257070d4)
 
 ## **Mobile preview:**
-![demo-mobile](https://github.com/user-attachments/assets/3eaf1414-fe48-436b-8c30-e5b7200a70c7)
+![demo-mobile](https://github.com/user-attachments/assets/e45349bc-f2ce-4968-a4fd-579ec0eb8b43)
 
 ## Live site url:
 https://cf-restcountries.netlify.app/
